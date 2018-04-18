@@ -1,0 +1,35 @@
+{
+  "name": "jianshunew",
+  "version": "1.0.0",
+  "description": "Nuxt.js project",
+  "author": "98kNiko <1259343943@qq.com>",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
+    "precommit": "npm run lint"
+  },
+  "dependencies": {
+    "animate.css": "^3.6.1",
+    "axios": "^0.18.0",
+    "bootstrap": "^4.1.0",
+    "bootstrap-vue": "^2.0.0-rc.8",
+    "cross-env": "^5.1.4",
+    "express": "^4.16.3",
+    "jquery": "^3.3.1",
+    "normalize.css": "^8.0.0",
+    "nuxt": "^1.0.0",
+    "source-map-support": "^0.5.4",
+    "vue-awesome-swiper": "^3.1.3"
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.2.1",
+    "eslint": "^4.15.0",
+    "eslint-friendly-formatter": "^3.0.0",
+    "eslint-loader": "^1.7.1",
+    "eslint-plugin-vue": "^4.0.0"
+  }
+}
