@@ -4,7 +4,7 @@
       <div class="width-limit">
         <!-- logo -->
         <nuxt-link  class="logo" to="/">
-          <img src="~/assets/img/navlogo.png">
+          <img src="~/assets/img/navlogo.png" >
         </nuxt-link>
         <!--右上角，写文章-->
         <nuxt-link to="/write" class="write-btn">
@@ -13,12 +13,12 @@
         </nuxt-link>
         <!--登录用户信息-->
         <div class="user">
-          <div class="drop-down">
+          <div class="drop-down" @mouseout="isShow=false" @mouseover="isShow=true">
             <nuxt-link to="/u/123" class="avatar">
               <img src="~/assets/img/top.jpg" >
             </nuxt-link>
           </div>
-          <ul class="drop-menu">
+          <ul class="drop-menu" v-show="isShow">
             <li>
               <nuxt-link to="/">
                 <i class="fa fa-home"></i>
@@ -58,7 +58,15 @@
 </template>
 <script>
   export default{
-    name:'myHeader'
+    name:'myHeader',
+    data:function () {
+      return{
+        isShow:false
+      }
+    }
+    // mounted:function () {
+    //   this.isShow = !this.isShow;
+    // }.bind(this)
   }
 </script>
 <style scoped>
@@ -135,6 +143,35 @@
     height: 100%;
     border-radius: 50%;
     border: 1px solid #eee;
+  }
+  nav .user:hover{
+    background-color: #f5f5f5;
+  }
+  nav .user .drop-menu{
+    position: absolute;
+    left: 0;
+    box-shadow: 0 0 8px rgba(0,0,0,.1);
+    min-width: 160px;
+    z-index: 999;
+    margin: 0;
+    padding: 10px 0;
+    font-size: 15px;
+  }
+  nav .user .drop-menu li a{
+    padding: 10px 20px;
+    line-height: 30px;
+    display: block;
+  }
+  nav .user .drop-menu li a:hove{
+    background: #f5f5f5;
+  }
+  nav .user .drop-menu li a i{
+    margin-right: 10px;
+    color: #ea6f5a;
+    width: 20px;
+    height: 20;
+    font-size: 20px;
+    display: inline-block;
   }
 </style>
 
