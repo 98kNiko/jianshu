@@ -13,9 +13,22 @@ html,body{
     line-height: 1.42857;
     background-color: #F1F1F1;
 }
+body{
+  overflow-x:hidden;
+}
+#__nuxt{
+  height: 100%;
+}
+#__layout{
+  height: 100%;
+}
+#sign-template{
+  height: 100%;
+}
 
 ul,ol,dl{
     list-style: none;
+  padding: 0;
 }
 
 input,input:hover,input:active,input:focus{
@@ -37,3 +50,4 @@ a:hover{
     color: #333;
     text-decoration: none;
 }
+
