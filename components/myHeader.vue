@@ -53,8 +53,13 @@
         </div>
         <!--右上角，登录注册-->
         <!--导航部分-->
-        <div class="container" style="height: 56px">
-          <ul class="nav-list">
+        <div class="container">
+          <div class="nav-listtop">
+            <button type="button" @click="tt">
+              <span class="fa fa-bars"></span>
+            </button>
+          </div>
+          <ul  :class="{'nav-list':true,'navlisttwo':navlisttwo==1}">
             <li>
               <nuxt-link class="active" to="/">
                 <i class="fa fa-compass"></i>
@@ -99,8 +104,15 @@
                 </li>
               </ul>
             </li>
-          </ul>
-        </div>
+            <li class="search">
+              <form method="post">
+                <input type="text" placeholder="搜索" class="search-input">
+                <a href="#" class="search-btn">
+            <li class="fa fa-search"></li>
+            </a>
+            </form>
+            </li>
+          </ul></div>
       </div>
     </nav>
   </div>
@@ -111,12 +123,15 @@
     data:function () {
       return{
         isShow:false,
-        userShow:false
+        userShow:false,
+        navlisttwo:true
+      }
+    },
+    methods:{
+      tt:function () {
+        this.navlisttwo=~this.navlisttwo;
       }
     }
-    // mounted:function () {
-    //   this.isShow = !this.isShow;
-    // }.bind(this)
   }
 </script>
 <style scoped>
@@ -225,9 +240,13 @@
   }
   nav .nav-list{
     margin: 0;
-    float: left;
+    transition: height 0.5s;
   }
-  nav nav-list:after{
+  nav .nav-list:after{
+    content: "";
+    height: 0;
+    display: block;
+    visibility: hidden;
     clear: both;
   }
   nav .nav-list>li{
@@ -251,6 +270,141 @@
     margin-right: 5px;
     font-size: 20px;
   }
+  nav .nav-list .search{
+    padding-left: 15px;
+    margin-right: 10px;
+  }
+
+  nav  .nav-list .search form{
+    margin-bottom: 20px;
+    position: relative;
+    top: 10px;
+  }
+  nav .nav-list .search form .search-input{
+    width: 240px;
+    height: 38px;
+    font-size: 14px;
+    padding: 0 40px 0 20px;
+    border: 1px solid #eee;
+    background:#eee;
+    border-radius: 40px;
+    transition: width .5s;
+  }
+  nav .nav-list .search form .search-input:focus{
+    width: 320px;
+  }
+  nav .nav-list .search form .search-input:focus~.search-btn{
+    background-color: #969696;
+    color: #fff;
+    border-radius: 50%;
+}
+
+  nav .nav-list .search form .search-btn{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 4px;
+    right: 5px;
+    color: #969696;
+    text-align: center;
+    padding: 0;
+  }
+  nav .nav-list .search form .search-btn:hover{
+    background: none;
+  }
+
+  nav .nav-list .search form .search-btn i{
+  display: block!important;
+  margin: 0;
+  text-align: center;
+  line-height: 30px;
+  font-size: 15px;
+}
+  .nav-listtop{
+    display: none;
+  }
+
+  .nav-listtop>button{
+    border: 0.5px solid #DDDDDD;
+    background-color: #ffffff;
+    margin-top: 8px;
+    border-radius: 4px;
+  }
+  .nav-listtop>button:hover{
+    background-color: #DDDDDD;
+
+  }
+  .nav-listtop>button span:hover{
+    background-color: #DDDDDD;
+
+  }
+  .nav-listtop>button span{
+    margin-top: 9px 15px 8px 0;
+    padding: 10px 10px;
+    background-color: #ffffff;
+    border: 1px solid #DDDDDD;
+    border: none;
+    color: #888888;
+    font-size: 18px;
+  }
+
+
+  @media (max-width: 1440px) {
+    nav .nav-list>li a i{
+     display: none;
+    }
+    nav .nav-list .search form .search-input{
+      width: 160px;
+    }
+    nav .nav-list .search form .search-input:focus{
+      width: 240px;
+    }
+
+  }
+  @media (max-width:1080px) {
+    nav .nav-list li span{
+      display:none;
+    }
+    nav .nav-list>li a i{
+      display: block;
+    }
+  }
+
+  @media (max-width:768px) {
+   .navlisttwo{
+     display: none;
+   }
+    .nav-listtop{
+      display: block;
+    }
+    nav .nav-list li span{
+      display:block;
+    }
+    nav .nav-list>li a i{
+      display: none;
+    }
+    .nav-list>li{
+      width: 100%;
+      text-align: center;
+      background-color: #FFFFFF;
+      border-bottom: 1px solid #f0f0f0;
+    }
+    .container{
+      padding: 0;
+      margin: 0;
+    }
+    .nav-list>.user>.drop-menu{
+      display: none;
+    }
+    nav .nav-list .search form .search-input{
+      width: 719px;
+    }
+    nav .nav-list .search form .search-input:focus{
+      width: 719px;
+    }
+  }
+
+
 </style>
 
 
