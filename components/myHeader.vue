@@ -12,8 +12,8 @@
           写文章
         </nuxt-link>
         <!--登录用户信息-->
-        <div class="user">
-          <div class="drop-down" @mouseout="isShow=false" @mouseover="isShow=true">
+        <div class="user" @mouseleave="isShow=false" @mouseover="isShow=true">
+          <div class="drop-down">
             <nuxt-link to="/u/123" class="avatar">
               <img src="~/assets/img/top.jpg" >
             </nuxt-link>
@@ -52,6 +52,55 @@
           </ul>
         </div>
         <!--右上角，登录注册-->
+        <!--导航部分-->
+        <div class="container" style="height: 56px">
+          <ul class="nav-list">
+            <li>
+              <nuxt-link class="active" to="/">
+                <i class="fa fa-compass"></i>
+                <span>发现</span>
+              </nuxt-link>
+            </li>
+            <li>
+              <nuxt-link to="/follow">
+                <i class="fa fa-book"></i>
+                <span>关注</span>
+              </nuxt-link>
+            </li>
+            <li class="user" @mouseover="userShow=true" @mouseleave="userShow=false">
+              <nuxt-link to="/noify">
+                <i class="fa fa-bell-o"></i>
+                <span>消息</span>
+              </nuxt-link>
+              <ul class="drop-menu" v-show="userShow">
+                <li>
+                  <nuxt-link to="/">
+                    <i class="fa fa-comment-o"></i>
+                    评论
+                  </nuxt-link>
+                </li>
+                <li>
+                  <nuxt-link to="/">
+                    <i class="fa fa-envelope-o"></i>
+                    简讯
+                  </nuxt-link>
+                </li>
+                <li>
+                  <nuxt-link to="/">
+                    <i class="fa fa-square-o"></i>
+                    关注
+                  </nuxt-link>
+                </li>
+                <li>
+                  <nuxt-link to="/">
+                    <i class="fa fa-heart-o"></i>
+                    喜欢和赞
+                  </nuxt-link>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
       </div>
     </nav>
   </div>
@@ -61,7 +110,8 @@
     name:'myHeader',
     data:function () {
       return{
-        isShow:false
+        isShow:false,
+        userShow:false
       }
     }
     // mounted:function () {
@@ -172,6 +222,34 @@
     height: 20;
     font-size: 20px;
     display: inline-block;
+  }
+  nav .nav-list{
+    margin: 0;
+    float: left;
+  }
+  nav nav-list:after{
+    clear: both;
+  }
+  nav .nav-list>li{
+    float: left;
+    margin-right: 5px;
+  }
+  nav .nav-list>li a{
+    display: block;
+    height: 56px;
+    line-height: 26px;
+    padding: 15px;
+  }
+  nav .nav-list>li a.active{
+    color: #ea6f5a;
+    background:none!important;
+  }
+  nav .nav-list>li a:hover{
+    background: #f5f5f5;
+  }
+  nav .nav-list>li a i{
+    margin-right: 5px;
+    font-size: 20px;
   }
 </style>
 
