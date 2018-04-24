@@ -61,7 +61,7 @@
               <span class="icon-bar"></span>
             </button>
           </div>
-          <transition enter-active-class="animated fadeInDown" leave-active-class="animated fadeOutUp">
+          <transition enter-active-class="animated fadeInDown" leave-active-class="animated fadeOutUp"></transition>
             <ul  class="nav-list" v-show="navShow">
               <li>
                 <nuxt-link class="active" to="/">

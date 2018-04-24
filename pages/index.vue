@@ -45,10 +45,12 @@
                       <img src="~/assets/img/default-avatar.jpg">
                     </nuxt-link>
                     <div class="info">
-                      <nuxt-link to="/u/123" class="nickname">测试用户</nuxt-link>
+                      <nuxt-link to="/u/123" class="nickname">
+                        测试用户
+                      </nuxt-link>
                       <span class="time">
-                                                04.12 10:18
-                                            </span>
+                       04.12 10:18
+                       </span>
                     </div>
                   </div>
                   <nuxt-link class="title" to="/p/123">佛系程序员的月薪五万指南</nuxt-link>
@@ -66,9 +68,9 @@
                       100
                     </nuxt-link>
                     <span>
-                                            <i class="fa fa-heart"></i>
-                                            20
-                                        </span>
+                        <i class="fa fa-heart"></i>
+                           20
+                     </span>
                   </div>
                 </div>
               </li>
@@ -81,8 +83,8 @@
                     <div class="info">
                       <nuxt-link to="/u/123" class="nickname">测试用户</nuxt-link>
                       <span class="time">
-                                                04.12 10:18
-                                            </span>
+                          04.12 10:18
+                       </span>
                     </div>
                   </div>
                   <nuxt-link class="title" to="/p/123">佛系程序员的月薪五万指南</nuxt-link>
@@ -194,9 +196,9 @@
               <nuxt-link to="/">
                 <img src="~/assets/img/3.png">
               </nuxt-link>
-              <nuxt-lnk to="/">
+              <nuxt-link to="/">
                 <img src="~/assets/img/4.png">
-              </nuxt-lnk>
+              </nuxt-link>
             </div>
             <!--推荐作者-->
             <div class="recommended-author">
@@ -315,33 +317,10 @@
     data () {
       return {
         name:'首页',
-        // isA:false,
         f:true,
         a:true,
         b:false
       }
-    },
-    // methods:{
-    //   tt:function () {
-    //       this.isA=!this.isA;
-    //       if(this.isA==false){
-    //         event.currentTarget.lastChild.data="关注"
-    //       }else{
-    //         event.currentTarget.lastChild.data="已关注"
-    //       }
-    //   },
-    //   tover:function () {
-    //     if(this.isA==true){
-    //       event.currentTarget.lastChild.nodeValue="取消关注";
-    //       event.currentTarget.firstChild.className="fa fa-close"
-    //     }
-    //   },
-    //   tout:function () {
-    //     if(this.isA==true){
-    //       event.currentTarget.lastChild.nodeValue='已关注';
-    //       event.currentTarget.firstChild.className="fa fa-check"
-    //     }
-    //   }
-    // }
+    }
   }
 </script>
