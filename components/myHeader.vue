@@ -61,7 +61,7 @@
               <span class="icon-bar"></span>
             </button>
           </div>
-          <transition enter-active-class="animated fadeInDown" leave-active-class="animated fadeOutUp"></transition>
+          <transition enter-active-class="animated fadeInDown" leave-active-class="animated fadeOutUp">
             <ul  class="nav-list" v-show="navShow">
               <li>
                 <nuxt-link class="active" to="/">
@@ -111,9 +111,9 @@
                 <form method="post">
                   <input type="text" placeholder="搜索" class="search-input">
                   <a href="#" class="search-btn">
-              <li class="fa fa-search"></li>
-              </a>
-              </form>
+                     <li class="fa fa-search"></li>
+                  </a>
+                 </form>
               </li>
             </ul>
           </transition>
