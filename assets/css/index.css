@@ -192,6 +192,10 @@
   color:#969696;
   float:right;
 }
+.index .aside .recommended-author .title .page-change i:active{
+  transition: all 0.5s;
+  transform: rotate(720deg);
+}
 .index .aside .recommended-author .recommended-list {
   text-align:left;
   margin-bottom:20px;
@@ -211,6 +215,21 @@
   font-size:13px;
   color:#42c02e;
 }
+
+.index .aside .recommended-author .recommended-list li .following{
+  margin-top:5px;
+  float:right;
+  font-size:13px;
+  color:#969696;
+}
+/*.index .aside .recommended-author .recommended-list li .following:hover{*/
+    /**/
+/*}*/
+
+.index .aside .recommended-author .recommended-list li .following-one{
+  display: none;
+}
+
 .index .aside .recommended-author .recommended-list li .name {
   margin-right:60px;
   font-size:14px;

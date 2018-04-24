@@ -202,18 +202,20 @@
             <div class="recommended-author">
               <div class="title">
                 <span>推荐作者</span>
+                <transition>
                 <nuxt-link class="page-change" to="/">
-                  <i class="fa fa-refresh"></i>
+                    <i class="fa fa-refresh"></i>
                   换一批
                 </nuxt-link>
+                </transition>
               </div>
               <ul class="recommended-list">
                 <li>
                   <nuxt-link class="avatar" to="/u/123">
                     <img src="~/assets/img/default-avatar.jpg">
                   </nuxt-link>
-                  <a href="#" class="follow">
-                    <i class="fa fa-plus"></i>
+                  <a href="#" :class="{'follow':!isA,'following':isA}" @click="tt()" @mouseover="tover()" @mouseout="tout()">
+                    <i :class="{'fa fa-plus':!isA,'fa fa-check':isA}"></i>
                     关注
                   </a>
                   <nuxt-link to="/u/123" class="name">
@@ -312,7 +314,31 @@
     },
     data () {
       return {
-        name:'首页'
+        name:'首页',
+        isA:false,
+        content:"关注"
+      }
+    },
+    methods:{
+      tt:function () {
+          this.isA=!this.isA;
+          if(this.isA==false){
+            event.currentTarget.lastChild.data="关注"
+          }else{
+            event.currentTarget.lastChild.data="已关注"
+          }
+      },
+      tover:function () {
+        if(this.isA==true){
+          event.currentTarget.lastChild.nodeValue="取消关注";
+          event.currentTarget.firstChild.className="fa fa-close"
+        }
+      },
+      tout:function () {
+        if(this.isA==true){
+          event.currentTarget.lastChild.nodeValue='已关注';
+          event.currentTarget.firstChild.className="fa fa-check"
+        }
       }
     }
   }
