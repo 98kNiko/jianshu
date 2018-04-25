@@ -66,7 +66,7 @@
             <nuxt-link class="title" to="/u/123">
               秘名
             </nuxt-link>
-            <i class="fa fa-mars"></i>
+            <i class="fa fa-venus"></i>
             <p>
               写了12886字，被22人关注，获得了 102个喜欢
             </p>
@@ -84,44 +84,40 @@
           </div>
           <div class="share">
             <a href="#" class="share-btn">
-              <i class="fa fa-weixin"></i>
+              <i class="fa fa-qq qq"></i>
             </a>
             <a href="#" class="share-btn">
-              <i class="fa fa-weibo"></i>
+              <i class="fa fa-weibo weibo"></i>
             </a>
             <a href="#" class="share-btn">
-              <i class="fa fa-weixin"></i>
+              <i class="fa fa-weixin weixin"></i>
             </a>
-            <a href="#" class="more-share">
+            <a href="#" class="more-share share-btn">
               更多分享
             </a>
           </div>
         </div>
+        <!--留言组件-->
+        <myComment></myComment>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+  import myComment from '~/components/myComment'
   import myHeader from '~/components/myHeader'
-    export default {
-        head:{
-            title:"简书文章详情页面-创作你的创作",
-            meta:[
-              {charset:'utf-8'},
-              {name:'keywords',content:'文章详情页面'},
-              {name:'description',content:"文章页面"}
-            ]
-        },
-        data(){
-          return{
-
-          }
-        },
-      components:{
-          myHeader
+  export default {
+    data () {
+      return {
+        name:'page'
       }
+    },
+    components:{
+      myHeader,
+      myComment
     }
+  }
 </script>
 
 <style scoped>
