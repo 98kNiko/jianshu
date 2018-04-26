@@ -410,8 +410,30 @@
   background:url(../img/heart.png);
   background-position:left;
   background-repeat: no-repeat;
-  background-size:1000px 50px;
+  background-size:1050px 50px;
 }
+.islike{
+  background:#EA6F5A!important;
+}
+.islike a {
+  color:#fff!important;
+}
+.islike .like-num {
+  border-left:1px solid #fff!important;
+}
+
+.islike .like-btn:before{
+  animation: changeLike .6s steps(19) forwards;
+}
+@keyframes changeLike {
+  0%{
+    background-position: left;
+  }
+  100%{
+    background-position: right;
+  }
+}
+
 .note .post .meta-bottom .like .like-btn a {
   padding:18px 30px 18px 55px;
   color:#ea6f5a;
@@ -422,7 +444,7 @@
   font-size:18px;
   border-left:1px solid #EA6F5A;
 }
-.note .post .meta-bottom .like .like-num a {
+.note .post .meta-bottom .like .like-num a{
   padding:18px 26px 18px 18px;
   color:#EA6F5A;
 }
@@ -447,8 +469,9 @@
   transition: .5s ease-in;
 }
 .note .post .meta-bottom .share .share-btn:hover {
-  background:#f7f7f7;
+  background: #f7f7f7;
 }
+
 i.weibo {
   color:#e05244;
 }
