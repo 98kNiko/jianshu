@@ -83,13 +83,25 @@
               </div>
             </div>
           <div class="share">
-            <a href="#" class="share-btn">
+            <div class="shareqq" v-if="isShow">
+              分享到QQ
+              <div class="shareqqup"></div>
+            </div>
+            <a href="#" class="share-btn" @mouseleave="isShow=false" @mouseover="isShow=true">
               <i class="fa fa-qq qq"></i>
             </a>
-            <a href="#" class="share-btn">
+            <div class="sharewei" v-if="winShow">
+              分享到微博
+              <div class="shareweiup"></div>
+            </div>
+            <a href="#" class="share-btn" @mouseleave="winShow=false" @mouseover="winShow=true">
               <i class="fa fa-weibo weibo"></i>
             </a>
-            <a href="#" class="share-btn">
+            <div class="sharexin" v-if="xinShow">
+              分享到微信
+              <div class="sharexinup"></div>
+            </div>
+            <a href="#" class="share-btn" @mouseleave="xinShow=false" @mouseover="xinShow=true">
               <i class="fa fa-weixin weixin"></i>
             </a>
             <a href="#" class="more-share share-btn">
@@ -111,7 +123,10 @@
     data () {
       return {
         name:'page',
-        islike:false
+        islike:false,
+        isShow:false,
+        winShow:false,
+        xinShow:false
       }
     },
     methods:{
