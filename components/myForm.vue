@@ -5,9 +5,9 @@
       <textarea name="comment-content" placeholder="写下你的评论"></textarea>
       <div class="write-function-block">
         <div class="emoji-modal-wrap">
-          <a href="javascript:void(0)" class="emoji">
-            <i class="fa fa-smile-o" @click="emojis=!emojis"></i>
-            <div v-if="emojis" id="emojijs">
+          <a href="javascript:void(0)" class="emoji" @click="emojis=!emojis">
+            <i class="fa fa-smile-o" ></i>
+            <div id="emojijs" v-if="emojis">
               <vue-emoji></vue-emoji>
             </div>
           </a>
