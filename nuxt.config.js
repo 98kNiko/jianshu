@@ -13,10 +13,13 @@ module.exports = {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
+  plugins:[
+    {src:'~/plugins/myPlugins',ssr:false}
+  ],
   /*
   ** Global CSS
   */
-  css: ['~/assets/css/main.css','~/assets/css/animate.css','~/assets/css/font-awesome.css','~/assets/css/index.css'],
+  css: ['~/assets/css/main.css','~/assets/css/animate.css','~/assets/css/font-awesome.css','~/assets/css/index.css',{src:'~/assets/css/emoji-sprite.scss',lang:'scss'}],
   /*
   ** Add axios globally
   */

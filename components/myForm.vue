@@ -5,8 +5,11 @@
       <textarea name="comment-content" placeholder="写下你的评论"></textarea>
       <div class="write-function-block">
         <div class="emoji-modal-wrap">
-          <a href="#" class="emoji">
-            <i class="fa fa-smile-o"></i>
+          <a href="javascript:void(0)" class="emoji">
+            <i class="fa fa-smile-o" @click="emojis=!emojis"></i>
+            <div v-if="emojis" id="emojijs">
+              <vue-emoji></vue-emoji>
+            </div>
           </a>
           <div class="emoji-modal"></div>
         </div>
@@ -18,11 +21,41 @@
   </div>
 </template>
 <script>
+  import vueEmoji from '~/components/emoji.vue'
+
   export default {
     name:"myForm",
-    data () {
+    data(){
       return {
+        emojis:false,
+         value: '',
+        showEmoji: false,
+        data: []
       }
+    },
+    methods: {
+      selectEmoji (code) {
+        this.showEmoji = false
+        this.value += code
+      },
+      submit () {
+        this.data.push(this.value)
+        this.value = ''
+      }
+    },
+    components: {
+      vueEmoji
     }
   }
 </script>
+
+<style>
+  .fa-smile-o{
+    position: relative ;
+  }
+  #emojijs{
+  position: absolute;
+    left:-40px;
+    top:100px;
+  }
+</style>

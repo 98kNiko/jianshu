@@ -83,30 +83,28 @@
               </div>
             </div>
           <div class="share">
-            <div class="shareqq" v-if="isShow">
-              分享到QQ
-              <div class="shareqqup"></div>
-            </div>
-            <a href="#" class="share-btn" @mouseleave="isShow=false" @mouseover="isShow=true">
+            <a href="javascript:void(0)" class="share-btn" v-tooltip="'分享到qq'">
               <i class="fa fa-qq qq"></i>
             </a>
-            <div class="sharewei" v-if="winShow">
-              分享到微博
-              <div class="shareweiup"></div>
-            </div>
-            <a href="#" class="share-btn" @mouseleave="winShow=false" @mouseover="winShow=true">
+            <a href="javascript:void(0)" class="share-btn" v-tooltip="'分享到微博'">
               <i class="fa fa-weibo weibo"></i>
             </a>
-            <div class="sharexin" v-if="xinShow">
-              分享到微信
-              <div class="sharexinup"></div>
-            </div>
-            <a href="#" class="share-btn" @mouseleave="xinShow=false" @mouseover="xinShow=true">
+            <a href="javascript:void(0)" class="share-btn" v-tooltip="'分享到微信'">
               <i class="fa fa-weixin weixin"></i>
             </a>
-            <a href="#" class="more-share share-btn">
+          <v-popover offset="16">
+            <template slot="popover">
+                <div class="sharemore">
+                  <p><i class="fa fa-qq"></i>分享到QQ空间</p>
+                  <p><i class="fa fa-twitter"></i>分享到twitter</p>
+                  <p><i class="fa fa-facebook"></i>分享到facebook</p>
+                  <p><i class="fa fa-google"></i>分享到Google+</p>
+                </div>
+            </template>
+            <a href="javascript:void(0)" class="share-btn more-share tooltip-target">
               更多分享
             </a>
+          </v-popover>
           </div>
         </div>
         <!--留言组件-->
@@ -124,9 +122,6 @@
       return {
         name:'page',
         islike:false,
-        isShow:false,
-        winShow:false,
-        xinShow:false
       }
     },
     methods:{
@@ -140,5 +135,5 @@
 </script>
 
 <style scoped>
-
+  /*v-tooltip="{trigger:'click',content:'4546468486'}*/
 </style>
