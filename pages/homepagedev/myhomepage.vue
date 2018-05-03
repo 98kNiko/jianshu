@@ -20,12 +20,13 @@
          </div>
          <div class="leftbottom">
            <ul>
-             <li class="fa fa-file-text"><span>文章</span></li>
-             <li class="fa fa-bell-o"><span>动态</span></li>
-             <li class="fa fa-comments"><span>最新评论</span></li>
-             <li class="fa fa-snowflake-o"><span>热门</span></li>
+             <li class="fa fa-file-text tab" @click="toggleTab('contents')"><span>文章</span></li>
+             <li class="fa fa-bell-o tab" @click="toggleTab('dynamic')"><span>动态</span></li>
+             <li class="fa fa-comments tab" @click="toggleTab('news')"><span>最新评论</span></li>
+             <li class="fa fa-snowflake-o tab" @click="toggleTab('hot')"><span>热门</span></li>
            </ul>
          </div>
+         <prince :is="currentTab" keep-alive></prince>
        </div>
        <div class="right">
          <div class="rightop">
@@ -43,14 +44,28 @@
 
 <script>
     import myHeader from '~/components/myHeader'
+    import contents from '~/components/page/contents'
+    import hot from '~/components/page/hot'
+    import news from '~/components/page/news'
+    import dynamic from '~/components/page/dynamic'
     export default {
       data:function() {
         return {
           name:'myhomepage',
+          currentTab:'contents'
         }
       },
       components:{
         myHeader,
+        contents,
+        hot,
+        dynamic,
+        news
+      },
+      methods:{
+        toggleTab:function (tab) {
+          this.currentTab = tab;
+        }
       }
     }
 </script>

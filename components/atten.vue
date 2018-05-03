@@ -13,7 +13,7 @@
               </div>
             </div>
           </div>
-          <button >已关注</button>
+          <button class="fa fa-check">已关注</button>
         </li>
       </ul>
     </div>
@@ -77,6 +77,6 @@ li button{
   height: 39px;
   border-radius: 20px;
   color: #969696;
-  margin-top: 35px;
+  margin-top: 38px;
 }
 </style>
