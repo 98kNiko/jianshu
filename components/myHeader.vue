@@ -14,25 +14,25 @@
         <!--登录用户信息-->
         <div class="user" @mouseleave="isShow=false" @mouseover="isShow=true">
           <div class="drop-down">
-            <nuxt-link to="/u/123" class="avatar">
+            <nuxt-link to="/homepagedev/myhomepage" class="avatar">
               <img src="~/assets/img/top.jpg" >
             </nuxt-link>
           </div>
           <ul class="drop-menu" v-show="isShow">
             <li>
-              <nuxt-link to="/">
+              <nuxt-link to="/homepagedev/myhomepage">
                 <i class="fa fa-home"></i>
                 我的主页
               </nuxt-link>
             </li>
             <li>
-              <nuxt-link to="/">
+              <nuxt-link to="/homepagedev/collect">
                 <i class="fa fa-bookmark"></i>
                 收藏的文章
               </nuxt-link>
             </li>
             <li>
-              <nuxt-link to="/bookmarks">
+              <nuxt-link to="/homepagedev/bookmarks">
                 <i class="fa fa-heart"></i>
                 喜欢的文章
               </nuxt-link>
@@ -76,31 +76,31 @@
                 </nuxt-link>
               </li>
               <li class="user" @mouseover="userShow=true" @mouseleave="userShow=false">
-                <nuxt-link to="/noify">
+                <nuxt-link to="/cations/comment">
                   <i class="fa fa-bell-o"></i>
                   <span>消息</span>
                 </nuxt-link>
                 <ul class="drop-menu" v-show="userShow">
                   <li>
-                    <nuxt-link to="/">
+                    <nuxt-link to="/cations/comment">
                       <i class="fa fa-comment-o"></i>
                       评论
                     </nuxt-link>
                   </li>
                   <li>
-                    <nuxt-link to="/">
+                    <nuxt-link to="/cations/news">
                       <i class="fa fa-envelope-o"></i>
                       简讯
                     </nuxt-link>
                   </li>
                   <li>
-                    <nuxt-link to="/">
+                    <nuxt-link to="/cations/attention">
                       <i class="fa fa-square-o"></i>
                       关注
                     </nuxt-link>
                   </li>
                   <li>
-                    <nuxt-link to="/">
+                    <nuxt-link to="/cations/like">
                       <i class="fa fa-heart-o"></i>
                       喜欢和赞
                     </nuxt-link>
